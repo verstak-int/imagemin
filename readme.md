@@ -24,7 +24,7 @@ imagemin(['images/*.{jpg,png}'], 'build/images', {
 	]
 }).then(files => {
 	console.log(files);
-	//=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
+	//=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg', input: 'src/images/foo.jpg'}, …]
 });
 ```
 
@@ -56,6 +56,13 @@ Type: `Object`
 Type: `Array`
 
 [Plugins](https://www.npmjs.com/browse/keyword/imageminplugin) to use.
+
+##### cwd
+
+Type: `String`
+
+Path to resolve glob patterns, for folder preserving.   
+See [imagemin/imagemin/issues/191](https://github.com/imagemin/imagemin/issues/191) and [imagemin/imagemin/pull/225](https://github.com/imagemin/imagemin/pull/225).
 
 ### imagemin.buffer(buffer, [options])
 
